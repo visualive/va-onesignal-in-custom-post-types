@@ -65,7 +65,19 @@ class VAONESIGNALINCUSTOMPOSTTYPES_Admin extends \OneSignal_Admin {
 		add_action( 'transition_post_status', array( __CLASS__, 'on_transition_post_status' ), 10, 3 );
 		add_action( 'admin_enqueue_scripts', array( 'OneSignal_Admin', 'admin_styles' ) );
 
+		add_filter( 'plugin_row_meta', array( __CLASS__, 'plugin_row_meta' ), 10, 2 );
+
 		return $onesignal;
+	}
+
+	public function plugin_row_meta( $meta, $file ) {
+		$meta_ling = '<a href="https://www.amazon.co.jp/registry/wishlist/AN9BLYUQMVZ5/" target="_blank">' . __( 'Wish List', 'va-onesignal-in-custom-post-types' ) . '</a>';
+
+		if ( $file === VAONESIGNALINCUSTOMPOSTTYPES_BASS ) {
+			array_push( $meta, $meta_ling );
+		}
+
+		return $meta;
 	}
 
 	public static function add_onesignal_post_options() {

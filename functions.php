@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/visualive/va-onesignal-in-custom-post-types
  * Description: This plugin is an Addon that makes "OneSignal Push Notifications" compatible with custom post types.
  * Author: KUCKLU
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author URI: http://visualive.jp/
  * Text Domain: va-onesignal-in-custom-post-types
  * Domain Path: /langs
@@ -36,6 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'VAOSICPT_ONESIGNAL_PLUGIN', 'onesignal-free-web-push-notifications/onesignal.php' );
 define( 'VAOSICPT_ONESIGNAL_PLUGIN_PATH', plugin_dir_path( dirname( dirname( __FILE__ ) ) . '/onesignal-free-web-push-notifications' ) );
+define( 'VAONESIGNALINCUSTOMPOSTTYPES_BASS', plugin_basename( __FILE__ ) );
 
 $vaosicpt_onesignal_admin    = dirname( dirname( __FILE__ ) ) . '/onesignal-free-web-push-notifications/onesignal-admin.php';
 $vaosicpt_onesignal_settings = dirname( dirname( __FILE__ ) ) . '/onesignal-free-web-push-notifications/onesignal-settings.php';
