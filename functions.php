@@ -2,7 +2,7 @@
 /**
  * Plugin Name: VA OneSignal in Custom Post Types
  * Plugin URI: https://github.com/visualive/va-onesignal-in-custom-post-types
- * Description: OneSignal in Custom Post Types.
+ * Description: This plugin is an Addon that makes "OneSignal Push Notifications" compatible with custom post types.
  * Author: KUCKLU
  * Version: 1.0.0
  * Author URI: http://visualive.jp/
@@ -37,16 +37,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'VAOSICPT_ONESIGNAL_PLUGIN', 'onesignal-free-web-push-notifications/onesignal.php' );
 define( 'VAOSICPT_ONESIGNAL_PLUGIN_PATH', plugin_dir_path( dirname( dirname( __FILE__ ) ) . '/onesignal-free-web-push-notifications' ) );
 
-require_once dirname( dirname( __FILE__ ) ) . '/onesignal-free-web-push-notifications/onesignal-admin.php';
-require_once dirname( dirname( __FILE__ ) ) . '/onesignal-free-web-push-notifications/onesignal-settings.php';
-require_once dirname( __FILE__ ) . '/incs/singleton.php';
-require_once dirname( __FILE__ ) . '/incs/admin.php';
+$vaosicpt_onesignal_admin    = dirname( dirname( __FILE__ ) ) . '/onesignal-free-web-push-notifications/onesignal-admin.php';
+$vaosicpt_onesignal_settings = dirname( dirname( __FILE__ ) ) . '/onesignal-free-web-push-notifications/onesignal-settings.php';
+
+if ( file_exists( $vaosicpt_onesignal_admin ) && file_exists( $vaosicpt_onesignal_settings ) ) {
+	require_once $vaosicpt_onesignal_admin;
+	require_once $vaosicpt_onesignal_settings;
+	require_once dirname( __FILE__ ) . '/incs/singleton.php';
+	require_once dirname( __FILE__ ) . '/incs/admin.php';
+}
 
 /**
  * Run plugin.
  *
  * @since 1.0.0
  */
-add_action( 'plugins_loaded', function () {
-	new \VAONESIGNALINCUSTOMPOSTTYPES\Modules\VAONESIGNALINCUSTOMPOSTTYPES_Admin();
+add_action( 'plugins_loaded', function () use ( $vaosicpt_onesignal_admin, $vaosicpt_onesignal_settings ) {
+	if ( file_exists( $vaosicpt_onesignal_admin ) && file_exists( $vaosicpt_onesignal_settings ) ) {
+		new \VAONESIGNALINCUSTOMPOSTTYPES\Modules\VAONESIGNALINCUSTOMPOSTTYPES_Admin();
+	}
 } );

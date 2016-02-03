@@ -45,8 +45,6 @@ class VAONESIGNALINCUSTOMPOSTTYPES_Admin extends \OneSignal_Admin {
 	 * @param array $settings If the set value is required, pass a value in an array.
 	 */
 	public function __construct( $settings = array() ) {
-		//VAONESIGNALINCUSTOMPOSTTYPES_Singleton
-
 		if ( self::is_plugin_active( VAOSICPT_ONESIGNAL_PLUGIN ) ) {
 			remove_action( 'init', array( 'OneSignal_Admin', 'init' ) );
 			add_action( 'init', array( &$this, 'init' ) );

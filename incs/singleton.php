@@ -52,6 +52,7 @@ trait VAONESIGNALINCUSTOMPOSTTYPES_Singleton {
 	 */
 	public static function instance( $settings = array() ) {
 		$class_name = get_called_class();
+
 		if ( ! isset( self::$instances[ $class_name ] ) ) {
 			self::$instances[ $class_name ] = new $class_name( $settings );
 		}
@@ -110,54 +111,5 @@ trait VAONESIGNALINCUSTOMPOSTTYPES_Singleton {
 		$plugins = get_plugins();
 
 		return ( ! empty( $plugins[ $plugin ] ) );
-	}
-
-	/**
-	 * Deactivate a single plugin or multiple plugins.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $plugin
-	 */
-	public static function deactivate_plugin( $plugin ) {
-		if ( function_exists( 'is_plugin_active' ) ) {
-			deactivate_plugins( $plugin );
-		} else {
-			if ( is_multisite() ) {
-				$plugins = get_site_option( 'active_sitewide_plugins', array() );
-				unset( $plugins[ $plugin ] );
-			} else {
-				$plugins = get_option( 'active_plugins', array() );
-				$key     = array_search( $plugin, $plugins );
-
-				if ( false !== $key ) {
-					unset( $plugins[ $key ] );
-				}
-			}
-
-			if ( is_multisite() ) {
-				update_site_option( 'active_sitewide_plugins', $plugins );
-			} else {
-				update_option( 'active_plugins', $plugins );
-			}
-		}
-	}
-
-	/**
-	 * Dummy settings.
-	 *
-	 * @since 1.0.0
-	 * @return array
-	 */
-	protected function _dummy_option() {
-	}
-
-	/**
-	 * Get settings.
-	 *
-	 * @since 1.0.0
-	 * @return array
-	 */
-	protected function get_option() {
 	}
 }
