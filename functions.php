@@ -5,7 +5,7 @@
  * Description: This plugin is an Addon that makes "OneSignal Push Notifications" compatible with custom post types.
  * Author: KUCKLU
  * Version: 1.0.1
- * Author URI: http://visualive.jp/
+ * Author URI: https://www.visualive.jp/
  * Text Domain: va-onesignal-in-custom-post-types
  * Domain Path: /langs
  * License: GNU General Public License v2 or later
