@@ -33,5 +33,5 @@ To install "VA OneSignal in Custom Post Types":
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.1 =
 * First public release to WordPress.org.
