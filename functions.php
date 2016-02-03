@@ -4,7 +4,7 @@
  * Plugin URI: https://github.com/visualive/va-onesignal-in-custom-post-types
  * Description: OneSignal in Custom Post Types.
  * Author: KUCKLU
- * Version: 1.0.0 Alpha
+ * Version: 1.0.0
  * Author URI: http://visualive.jp/
  * Text Domain: va-onesignal-in-custom-post-types
  * Domain Path: /langs
