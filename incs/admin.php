@@ -64,7 +64,7 @@ class VAONESIGNALINCUSTOMPOSTTYPES_Admin extends \OneSignal_Admin {
 			add_action( 'add_meta_boxes', array( __CLASS__, 'add_onesignal_post_options' ) );
 		}
 
-		add_action( 'transition_post_status', array( 'OneSignal_Admin', 'on_transition_post_status' ), 10, 3 );
+		add_action( 'transition_post_status', array( __CLASS__, 'on_transition_post_status' ), 10, 3 );
 		add_action( 'admin_enqueue_scripts', array( 'OneSignal_Admin', 'admin_styles' ) );
 
 		return $onesignal;
@@ -98,7 +98,7 @@ class VAONESIGNALINCUSTOMPOSTTYPES_Admin extends \OneSignal_Admin {
 			unset( $post_types[ $attachment ] );
 		}
 
-		if ( empty( $post ) || in_array( get_post_type( $post ) , $post_types ) || $new_status !== "publish" ) {
+		if ( empty( $post ) || ! in_array( get_post_type( $post ), $post_types ) || $new_status !== "publish" ) {
 			return $new_status;
 		}
 
@@ -144,5 +144,9 @@ class VAONESIGNALINCUSTOMPOSTTYPES_Admin extends \OneSignal_Admin {
 		}
 
 		return $new_status;
+	}
+
+	public static function on_transition_post_status( $new_status, $old_status, $post ) {
+		self::send_notification_on_wp_post( $new_status, $old_status, $post );
 	}
 }
