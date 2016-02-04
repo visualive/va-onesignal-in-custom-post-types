@@ -7,7 +7,7 @@ This plugin is an Addon that makes "OneSignal Push Notifications" compatible wit
 
 This plugin is to be used with "OneSignal Push Notifications" Compatible. Do not disable or delete "OneSignal Push Notifications" Compatible.
 
-OneSignal Push Notifications
+### OneSignal Push Notifications
 https://wordpress.org/plugins/onesignal-free-web-push-notifications/
 
 ## Requires
