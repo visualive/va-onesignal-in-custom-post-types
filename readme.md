@@ -1,13 +1,13 @@
 VA OneSignal in Custom Post Types
 ==============================
 
-This plugin is an Addon that makes "OneSignal Push Notifications" compatible with custom post types.
+This plugin is an Addon that makes "OneSignal - Free Web Push Notifications" compatible with custom post types.
 
 ## Description
 
-This plugin is to be used with "OneSignal Push Notifications" Compatible. Do not disable or delete "OneSignal Push Notifications" Compatible.
+This plugin is to be used with "OneSignal - Free Web Push Notifications" Compatible. Do not disable or delete "OneSignal - Free Web Push Notifications" Compatible.
 
-### OneSignal Push Notifications
+### OneSignal - Free Web Push Notifications
 https://wordpress.org/plugins/onesignal-free-web-push-notifications/
 
 ## Requires

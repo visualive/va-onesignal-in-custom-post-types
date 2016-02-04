@@ -8,13 +8,13 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin is an Addon that makes "OneSignal Push Notifications" compatible with custom post types.
+This plugin is an Addon that makes "OneSignal - Free Web Push Notifications" compatible with custom post types.
 
 == Description ==
 
-This plugin is to be used with "OneSignal Push Notifications" Compatible. Do not disable or delete "OneSignal Push Notifications" Compatible.
+This plugin is to be used with "OneSignal - Free Web Push Notifications" Compatible. Do not disable or delete "OneSignal - Free Web Push Notifications" Compatible.
 
-= OneSignal Push Notifications =
+= OneSignal - Free Web Push Notifications =
 https://wordpress.org/plugins/onesignal-free-web-push-notifications/
 
 = Requires =
